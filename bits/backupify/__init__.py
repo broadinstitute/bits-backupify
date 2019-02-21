@@ -1,9 +1,6 @@
 """Backupify class file."""
 
-import json
 import requests
-import urllib
-import urllib2
 
 
 class Backupify(object):
@@ -55,6 +52,14 @@ class Backupify(object):
 
         # update headers
         self.headers['Authorization'] = self.access_token
+
+    def get_dict(self, items, key='id'):
+        """Return a dictionary from a list."""
+        data = {}
+        for item in items:
+            k = item.get(key)
+            data[k] = item
+        return data
 
     def get_list_items(self, url, params, collection):
         """Get a URL."""
@@ -123,6 +128,10 @@ class Backupify(object):
             'status': status,
         }
         return self.get_list_items(url, params, 'users')
+
+    def get_users_dict(self, status='all'):
+        """Return a dictionary of users."""
+        return self.get_dict(self.get_users(), 'email')
 
     #
     # Exports
