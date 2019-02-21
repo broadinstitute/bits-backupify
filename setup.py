@@ -18,7 +18,7 @@ from setuptools import setup, find_packages
 setup(
     name='bits-backupify',
 
-    version='1.0.1',
+    version='1.0.2',
 
     description='BITS Backupify',
     long_description='Python client for Backupify',

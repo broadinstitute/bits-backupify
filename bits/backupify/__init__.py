@@ -104,13 +104,13 @@ class Backupify(object):
         data = {
             'user[email]': email,
         }
-        return requests.post(url, json=data, headers=self.headers).json()
+        return requests.post(url, json=data, headers=self.headers)
 
     def delete_user(self, email):
         """Delete a user from Backupify."""
         # DELETE https://api.backupify.com/gapps/v1/domains/{DomainName}/users/{UserEmail}
         url = '%s/users/%s' % (self.base_url, email)
-        return requests.delete(url, headers=self.headers).json()
+        return requests.delete(url, headers=self.headers)
 
     def get_user(self, email):
         """Return a user from Backupify."""
