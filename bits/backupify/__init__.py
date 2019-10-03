@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """Backupify class file."""
 
 import requests
